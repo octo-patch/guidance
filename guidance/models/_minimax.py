@@ -41,7 +41,7 @@ class MiniMaxInterpreter(OpenAIRuleMixin, OpenAIJSONMixin, OpenAIRegexMixin, Bas
 class MiniMax(Model):
     def __init__(
         self,
-        model: str = "MiniMax-M2.7",
+        model: str = "MiniMax-M3",
         sampling_params: SamplingParams | None = None,
         echo: bool = True,
         *,
@@ -57,10 +57,9 @@ class MiniMax(Model):
         ----------
         model : str
             The name of the MiniMax model to use. Available models:
-            - ``MiniMax-M2.7`` (default): Latest flagship model with enhanced reasoning and coding.
+            - ``MiniMax-M3`` (default): 512K context window, up to 128K output, image input supported.
+            - ``MiniMax-M2.7``: Previous flagship model with enhanced reasoning and coding.
             - ``MiniMax-M2.7-highspeed``: High-speed version of M2.7 for low-latency scenarios.
-            - ``MiniMax-M2.5``: Peak Performance, 204K context window.
-            - ``MiniMax-M2.5-highspeed``: Same performance, faster and more agile, 204K context window.
         echo : bool
             If true the final result of creating this model state will be displayed (as HTML in a notebook).
         api_key : None or str
